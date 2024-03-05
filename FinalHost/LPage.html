@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Content</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Optional background color */
+        }
+ /* Remove the blue link color */
+        a {
+            color: inherit; /* Use the color from the parent element */
+            text-decoration: none; /* Remove underline (optional) */
+        }
+
+        .content {
+            background-color: #ffffff; /* White background */
+            padding: 20px; /* Add padding for spacing around content */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+        }
+
+	
+
+	.button-link {
+    		display: inline-block;
+    		padding: 10px 20px;
+    		text-align: center;
+    		text-decoration: none;
+    		background-color: #ff0000; /* Blue color */
+    		color: #fff; /* Text color */
+    		border: 1px solid #007bff; /* Add a border for button-like appearance */
+    		border-radius: 5px; /* Rounded corners */
+    		cursor: pointer;
+  		}
+
+  	
+	.normal{
+		color: inherit; /* Use the color from the parent element */
+            	text-decoration: none; /* Remove underline (optional) */
+		}
+    </style>
+</head>
+<body>
+    <div class="content" xss=removed>
+
+              	<a href="https://saathphere.com" target="_blank" xss=removed>
+                <img src="https://www.saathphere.com/uploads/MailLogo.png" alt="Logo" border="0" width="128" xss=removed>
+              	</a>
+
+        	<!-- Your content goes here -->
+        	<h1>Welcome to Saath Phere</h1>        	
+
+		<p xss=removed>Dear [[to]], <br/> Tap the button below to confirm your email address. If you didn't create an account with <a 					href="https://saathPhere.com">Saath Phere</a>, you can safely delete this email.</p>
+
+
+		<p xss=removed>
+		<a href="[[email_verify]]" class="button-link" target="_blank" xss=removed>Click Here To Activate</a>
+		</p>
+		
+		<p xss=removed>If that doesn't work, copy and paste the following link in your browser:</p>
+              	<p xss=removed><a href="https://SaathPhere.com" target="_blank">[[email_verify]]</a></p>
+	
+		
+		<p xss=removed> Team, <br/> Saath Phere</p> 
+		<br/>
+		<p xss=removed>You received this email because we received a request for creating your account. If you didn't request you can safely delete this 		email.</p>
+
+    </div>
+</body>
+</html>
