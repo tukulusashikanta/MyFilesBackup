@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .register-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .site-name {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="applogo.png" alt="Logo" width="50" height="50">
+    </div>
+    <div class="site-name">Your Site Name</div>
+</header>
+
+<div class="container">
+    <h1>User Registration</h1>
+    <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="photo">Select Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Mobile Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the Terms & Conditions</label>
+
+        <input type="submit" value="Register" class="register-btn">
+    </form>
+</div>
+
+<footer>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+</footer>
+
+<script>
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Construct the request body
+        const formData = new FormData(this);
+        const requestBody = {
+            name: formData.get("name"),
+            file: formData.get("name"),
+            emailid: formData.get("email"),
+            mobilenumber: formData.get("phone"),
+            joindate: "123456" // Current timestamp in seconds
+        };
+
+        // Make an AJAX request to the API
+        fetch("https://sashivote.pythonanywhere.com/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the API response here (if needed)
+            console.log(data);
+            alert("Registration successful!"); // Show a success message (you can customize this)
+            // Optionally, redirect to another page after successful registration
+             window.location.href = "Voting.html";
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Registration failed. Please try again."); // Show an error message (you can customize this)
+        });
+    });
+</script>
+
+</body>
+</html>

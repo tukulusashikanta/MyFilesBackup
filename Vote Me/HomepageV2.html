@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contest Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        #logo {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .contest {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .navigation ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png" alt="Logo">
+    </header>
+    <div class="container">
+        <section id="welcome">
+            <h2>Welcome to Our Contest Page!</h2>
+            <p>Here you can find ongoing contests and participate in them. Explore and have fun!</p>
+        </section>
+        
+        <section id="ongoing-contests">
+            <h2>Ongoing Contests</h2>
+            <div id="contests-list">
+                <!-- This will be populated with contest data from API -->
+            </div>
+        </section>
+        
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        // Fetch contest data from API and populate the contests-list div
+        fetch('https://api.example.com/contests')
+            .then(response => response.json())
+            .then(data => {
+                const contestsList = document.getElementById('contests-list');
+                data.forEach(contest => {
+                    const contestElement = document.createElement('div');
+                    contestElement.classList.add('contest');
+                    contestElement.innerHTML = `
+                        <h3>${contest.name}</h3>
+                        <p>Contest ID: ${contest.id}</p>
+                        <button onclick="registerForContest(${contest.id})">Register</button>
+                        <button onclick="voteForContest(${contest.id})">Vote</button>
+                    `;
+                    contestsList.appendChild(contestElement);
+                });
+            })
+            .catch(error => console.error('Error fetching contests:', error));
+
+        function registerForContest(contestId) {
+            // Logic for registering for the contest
+            console.log('Registered for contest with ID:', contestId);
+        }
+
+        function voteForContest(contestId) {
+            // Logic for voting for the contest
+            console.log('Voted for contest with ID:', contestId);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .contest-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .participant-info {
+            margin-bottom: 20px;
+        }
+        .vote-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .site-name {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+        .logo {
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="applogo.png" alt="Logo" width="50" height="50">
+    </div>
+    <div class="site-name">Your Site Name</div>
+</header>
+
+<div class="container">
+    <div class="contest-name">Contest Name: <span id="contest-name">Your Contest Name</span></div>
+    <div class="participant-info">
+        <h2>Participant Name: <span id="participant-name">Participant Name</span></h2>
+        <p>Votes Received: <span id="votes-received">0</span></p>
+    </div>
+    <p>Voting Link: <a href="#" id="voting-link">Vote Now</a></p>
+    <button class="vote-btn" id="vote-btn">Vote</button>
+</div>
+
+<footer>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .result-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .winner-info {
+            margin-bottom: 20px;
+        }
+        .site-name {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+        .logo {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="applogo.png" alt="Logo" width="50" height="50">
+    </div>
+    <div class="site-name">Your Site Name</div>
+</header>
+
+<div class="container">
+    <h1> Voting Result</h1>
+    <div class="result-title">Contest Name: <span id="contest-name">Your Contest Name</span></div>
+    <div class="result-title">Total Votes of all Contestants: <span id="total-votes">0</span></div>
+    <div class="winner-info">
+        <h2>Winners:</h2>
+        <ol>
+            <li><span id="winner1">First Place</span> - <span id="votes1">0</span> votes</li>
+            <li><span id="winner2">Second Place</span> - <span id="votes2">0</span> votes</li>
+            <li><span id="winner3">Third Place</span> - <span id="votes3">0</span> votes</li>
+        </ol>
+    </div>
+</div>
+
+<footer>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>
